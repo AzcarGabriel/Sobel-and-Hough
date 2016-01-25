@@ -1,0 +1,18 @@
+function resp = BallPerceptorSH(I, AproxRadius, BallSpot)
+
+[newI,newBallSpot] = Window(I,AproxRadius,BallSpot);
+
+newI = Sobel(newI);
+
+%preCenter = CalculatedCenter(newI,newBallSpot,AproxRadius);
+
+[newI,newBallSpot] = Window(newI,AproxRadius,preCenter);
+
+centro = GabrielHough(newI, AproxRadius);
+
+newnewI = Anotar(newI,centro);
+
+%resp = insertShape(I, 'circle', [realCenter(2) realCenter(1) AproximatedRadius], 'LineWidth', 1, 'Color', 'green');
+
+end
+

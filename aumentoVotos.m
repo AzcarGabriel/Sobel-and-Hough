@@ -24,58 +24,58 @@ while i < limite(2)
     
     %Centro
     if uno && tres && dos && cuatro
-        votos(actualY,actualX) = votos(actualY,actualX) + 2;
+        votos(actualY,actualX) = votos(actualY,actualX) + 3;
     end
     
     %Primera periferia
     if cinco
-        votos(actualY,actualX + 1) = votos(actualY,actualX + 1) + 1;
+        votos(actualY,actualX + 1) = votos(actualY,actualX + 1) + 2;
     end
     
     if seis
-        votos(actualY,actualX - 1) = votos(actualY,actualX - 1) + 1;
+        votos(actualY,actualX - 1) = votos(actualY,actualX - 1) + 2;
     end
     
     if siete
-        votos(actualY + 1,actualX) = votos(actualY + 1,actualX) + 1;
+        votos(actualY + 1,actualX) = votos(actualY + 1,actualX) + 2;
     end
     
     if ocho
-        votos(actualY - 1,actualX) = votos(actualY - 1,actualX) + 1;
+        votos(actualY - 1,actualX) = votos(actualY - 1,actualX) + 2;
     end
     
     %Segunda periferia
-%     if nueve
-%         votos(actualY - 2, actualX) = votos(actualY - 2, actualX) + 1;
-%     end
-%     
-%     if diez
-%         votos(actualY + 2, actualX) = votos(actualY + 2, actualX) + 1;
-%     end
-%     
-%     if once
-%         votos(actualY, actualX + 2) = votos(actualY, actualX + 2) + 1;
-%     end
-%     
-%     if doce
-%         votos(actualY, actualX - 2) = votos(actualY, actualX - 2) + 1;
-%     end
-%     
-%     if nueve && once
-%         votos(actualY - 2, actualX + 2) = votos(actualY - 2, actualX + 2) + 1;
-%     end
-%     
-%     if nueve && doce
-%         votos(actualY - 2, actualX - 2) = votos(actualY - 2, actualX - 2) + 1;
-%     end
-%     
-%     if diez && once
-%          votos(actualY + 2, actualX + 2) = votos(actualY + 2, actualX + 2) + 1;
-%     end
-%     
-%     if diez && doce
-%          votos(actualY + 2, actualX - 2) = votos(actualY + 2, actualX - 2) + 1;
-%     end
+    if nueve
+        votos(actualY - 2, actualX) = votos(actualY - 2, actualX) + 1;
+    end
+    
+    if diez
+        votos(actualY + 2, actualX) = votos(actualY + 2, actualX) + 1;
+    end
+    
+    if once
+        votos(actualY, actualX + 2) = votos(actualY, actualX + 2) + 1;
+    end
+    
+    if doce
+        votos(actualY, actualX - 2) = votos(actualY, actualX - 2) + 1;
+    end
+    
+    if nueve && once
+        votos(actualY - 2, actualX + 2) = votos(actualY - 2, actualX + 2) + 1;
+    end
+    
+    if nueve && doce
+        votos(actualY - 2, actualX - 2) = votos(actualY - 2, actualX - 2) + 1;
+    end
+    
+    if diez && once
+         votos(actualY + 2, actualX + 2) = votos(actualY + 2, actualX + 2) + 1;
+    end
+    
+    if diez && doce
+         votos(actualY + 2, actualX - 2) = votos(actualY + 2, actualX - 2) + 1;
+    end
     
     i = i + 2;
     

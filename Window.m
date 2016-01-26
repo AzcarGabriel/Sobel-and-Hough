@@ -30,9 +30,17 @@ else
     terminoX = x + diameter;
 end
 
-
 window = I(inicioY : terminoY , inicioX : terminoX , :);
 
-newBallSpot = [BallSpot(1) - inicioY, BallSpot(2) - inicioX];
+if inicioY == 1
+    inicioY = 0;
+end
+
+if inicioX == 1
+    inicioX = 0;
+end
+
+newBallSpot = [BallSpot(2) - inicioX, BallSpot(1) - inicioY];
+
 end
 

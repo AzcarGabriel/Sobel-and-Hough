@@ -6,7 +6,7 @@ i = 0;
 contador = 0;
 a=0;
 
-if AproxRadius <= 8
+if AproxRadius <= 15
     while i < 2 * pi
         %centro
         y = centerY + floor(AproxRadius * sin(i));
@@ -20,13 +20,13 @@ if AproxRadius <= 8
         i = i + 0.3;
         a = a + 1;
     end
-    if contador > 10
+    if contador > (AproxRadius/2)
         resp = true;
     else
         resp = false;
     end
     
-elseif AproxRadius <= 15
+elseif AproxRadius <= 30
     while i < 2 * pi
         y = centerY + floor(AproxRadius * sin(i));
         x = centerX + floor(AproxRadius * cos(i));
@@ -47,7 +47,7 @@ elseif AproxRadius <= 15
         a = a + 1;
     end
     
-    if contador >= 15
+    if contador >= (AproxRadius/2)
         resp = true;
     else
         resp = false;
@@ -80,7 +80,7 @@ else
         a = a + 1;
     end
     
-    if contador >= 30
+    if contador >= (AproxRadius/2)
         resp = true;
     else
         resp = false;   

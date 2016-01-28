@@ -12,19 +12,19 @@ AproxRadius0 = AproxRadius;
 
 original = newI2;
 
-newI0 = Gauss(newI0,1);
-newI1 = Gauss(newI1,1);
-newI2 = Gauss(newI2,1);
+newI0 = Gauss(newI0,2);
+newI1 = Gauss(newI1,2);
+newI2 = Gauss(newI2,2);
 
 newI0 = edge(newI0,'Sobel',0.01);
 newI1 = edge(newI1,'Sobel',0.01);
 newI2 = edge(newI2,'Sobel',0.01);
 
-newI = 2*newI2 - newI1 - newI0;
+newI = newI2 + 2*newI1 + newI0;
 
-centro = GabrielHough(newI, AproxRadius0);
+centro = GabrielHough(newI, AproxRadius0,AproxRadius);
 
-if CheckRadius(newI,AproxRadius0,centro)
+if CheckRadiusGrande(newI,AproxRadius0,AproxRadius,centro)
     newI = insertShape(original, 'circle', [centro(2) centro(1) AproxRadius0], 'LineWidth', 1, 'Color', 'green');
     figure
     imshow(newI);

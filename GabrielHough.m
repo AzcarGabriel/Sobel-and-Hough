@@ -1,4 +1,4 @@
-function max = GabrielHough(I, AproxRadius)
+function max = GabrielHough(I, AproxRadius, original)
 %Intento de Hough
 %necesario = AproxRadius;
 i = 1;
@@ -9,13 +9,16 @@ contador = 0;
 
 while j < N
     while i < M
-        if I(j,i) == 1 || I(j,i) == (-2) || I(j,i) == 2
+        if original > 20 && (I(j,i) == 2 || I(j,i) == 3 || I(j,i) == 1)
+            puntos = PuntosCircunAngles([j,i],AproxRadius,N,M);
+            votos = aumentoVotos(votos, puntos);
+            contador = contador + 1;
+        elseif I(j,i) == 2 || I(j,i) == 3
             puntos = PuntosCircunAngles([j,i],AproxRadius,N,M);
             votos = aumentoVotos(votos, puntos);
             contador = contador + 1;
         end
         i = i + 1;
-
     end
     i = 1;
     j = j + 1;

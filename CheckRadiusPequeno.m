@@ -1,4 +1,4 @@
-function resp = CheckRadiusPequeno(I,AproxRadius,original,Center)
+function resp = CheckRadiusPequeno(I,AproxRadius,Center)
 centerX = Center(2);
 centerY = Center(1);
 i = 0;

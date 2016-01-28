@@ -1,4 +1,4 @@
-function resp = CheckRadiusGrande(I,AproxRadius,original,Center)
+function resp = CheckRadiusGrande(I,AproxRadius,Center)
 centerX = Center(2);
 centerY = Center(1);
 i = 0;
@@ -11,7 +11,7 @@ while i < 2 * pi
     x = centerX + floor(AproxRadius * cos(i));
     if x > 0 && y > 0
         nuevo =  I(centerY + floor(AproxRadius * sin(i)), centerX + floor(AproxRadius * cos(i)));
-        if nuevo || nuevo == 2 || nuevo == 3
+        if nuevo == 1 || nuevo == 2
             contador = contador + 1;
         end
     end
@@ -19,7 +19,7 @@ while i < 2 * pi
     a = a + 1;
 end
 
-if contador > AproxRadius/2
+if contador > 10
     resp = true;
 else
     resp = false;

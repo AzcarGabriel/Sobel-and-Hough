@@ -12,7 +12,7 @@ while i < 2 * pi
             puntos = [puntos, nuevo];
         end
     end
-    i = i + 0.2;
+    i = i + 0.35;
 end
 
 end

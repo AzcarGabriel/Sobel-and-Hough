@@ -3,7 +3,7 @@ function resp = aumentoVotos(votos, puntosCircunferencia)
 
 limite = size(puntosCircunferencia);
 i = 1;
-aumento = [1,1,1,1,1 ; 1,2,2,2,1 ; 1,2,3,2,1 ; 1,2,2,2,1 ; 1,1,1,1,1];
+aumento = [1,1,1 ; 1,2,1 ; 1,1,1];
  
 while i < limite(2)
     actualY = puntosCircunferencia(i) + 2;

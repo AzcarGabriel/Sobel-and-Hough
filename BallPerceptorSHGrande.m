@@ -1,10 +1,9 @@
-function BallPerceptorSH0(I0,I1,I2, AproxRadius, BallSpot)
+function BallPerceptorSHGrande(I0,I1,I2, AproxRadius, BallSpot) %CR CB Y
 tic
 
 [newI0,newBallSpot] = Window(I0,AproxRadius,BallSpot);
 [newI1,newBallSpot] = Window(I1,AproxRadius,BallSpot);
 [newI2,newBallSpot] = Window(I2,AproxRadius,BallSpot);
-AproxRadius0 = AproxRadius;
 
 [newI0,AproxRadius0] = escalarVentana(newI0,AproxRadius);
 [newI1,AproxRadius1] = escalarVentana(newI1,AproxRadius);
@@ -20,11 +19,11 @@ newI0 = edge(newI0,'Sobel',0.01);
 newI1 = edge(newI1,'Sobel',0.01);
 newI2 = edge(newI2,'Sobel',0.01);
 
-newI = 2*newI2 + newI1 + newI0;
+newI = newI2 + 2*newI1 + newI0;
 
-centro = GabrielHough(newI, AproxRadius0, AproxRadius);
+centro = GabrielHough(newI,AproxRadius0,AproxRadius);
 
-if CheckRadiusPequeno(newI,AproxRadius0,AproxRadius,centro)
+if CheckRadiusGrande(newI,AproxRadius0,centro)
     newI = insertShape(original, 'circle', [centro(2) centro(1) AproxRadius0], 'LineWidth', 1, 'Color', 'green');
     figure
     imshow(newI);
@@ -37,3 +36,5 @@ end
 toc
 
 end
+
+

@@ -23,3 +23,4 @@ BallPerceptorSH(I0Cr,I0Cb,I0Y,14,[329,501])
 BallPerceptorSH(I0Cr,I0Cb,I0Y,14,[327,523])
 
 BallPerceptorSH(I0Cr,I0Cb,I0Y,14,[320,771])
+BallPerceptorSH(I0Cr,I0Cb,I0Y,45,[549,707])
